@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[profile.release]
+codegen-units = 16
+debug = true
+lto = true
+
+[profile.bench]
+debug = true
+
+[workspace.lints.rust]
+unreachable_pub = "deny"
+# missing_debug_implementations = "deny"
+# missing_copy_implementations = "deny"
+
+[workspace.lints.clippy]
+dbg_macro = "deny"
+todo = "deny"
+clone_on_ref_ptr = "deny"
+future_not_send = "deny"
